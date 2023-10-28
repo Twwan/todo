@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #0b6623;
+  }
+  
+  input {
+    width: 70%;
+    padding: 10px;
+    margin-right: 5px;
+    border: 1px solid white;
+    background-color: black;
+    font-size: 24px;
+    color: white;
+  }
+  
+  button {
+    background-color: #0b6623;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+  
+  span {
+    color: #0b6623;
+  }
+  
+  div {
+    margin: 15px 0;
+  }
+  
+  .task {
+    font-size: 24px;
+    color: black;
+    background-color: #8cc63f;
+    padding: 5px 5px;
+    border: 2px solid #0b6623;
+    margin: 5px 0;
+  }
+
+  .completed-task {
+    text-decoration: line-through;
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+
+  .checkbox .icon {
+    margin-right: 5px;
+    font-size: 15px;
+  }
+  
+  button:hover {
+    background-color: #8cc63f;
+  }
