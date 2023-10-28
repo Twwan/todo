@@ -10,7 +10,7 @@ function MainPage() {
 
   const handleAdd = () => {
     axios.post('http://localhost:3001/add', { text: task })
-      .then(() => setTodos([...todos, { text: task, done: false }]))
+      .then(() => setTodos([...todos, { task: task, done: false }]))
       .catch(err => console.log(err));
   };
 
@@ -22,7 +22,11 @@ function MainPage() {
 
   const Edit = (id) => {
     axios.put('http://localhost:3001/update/' + id)
-      .then(result => console.log(result))
+      .then(result => {
+        let array = Array.from(todos)
+        array[array.findIndex(item => item._id = id)] = result
+        setTodos(array)
+    })
       .catch(err => console.log(err));
 
     setStyle('green');
@@ -49,9 +53,9 @@ function MainPage() {
             todos.map(todo => (
               <div key={todo._id}>
                 {todo.done ? (
-                  <p className="completed-task">{todo.text}</p>
+                  <p className="completed-task">{todo.task}</p>
                 ) : (
-                  <p className='task'>{todo.text}</p>
+                  <p className='task'>{todo.task}</p>
                 )}
                 <button onClick={() => Delete(todo._id)}>Удалить</button>
                 {!todo.done && (
